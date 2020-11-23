@@ -59,8 +59,18 @@ match p=()-[a:CALL]-() return p limit 10
 * 利用正则查询
 
 ```
+match (n:USER) where n.name=~'Jack.*' return n limit 10
+##其实就是利用正则进行一些查询
+```
+
+* 包含查询  \(contains\)
 
 ```
+match (n:USER) where n.name= contains 'Jack' return n limit 10
+##指定包含的字符串
+```
+
+
 
 
 
