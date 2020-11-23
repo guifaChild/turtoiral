@@ -24,9 +24,7 @@ match (n:Pserson) return n limit 10
 ## limit 与sql中的limit意义相同
 ```
 
-```
-  1.2  trick
-```
+1.2 trick
 
 ```
 选中节点，下面展示节点的不同属性
