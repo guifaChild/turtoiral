@@ -26,8 +26,6 @@
 neo4j-admin import -node data.csv -node data2.csv -relationships data_data2.csv 默认的数据库是graph.db数据库
 ```
 
-
-
 ### 
 
 
