@@ -41,7 +41,7 @@ match (n:Person) -[:HAS_PHONE] ->(p:Phone) return n,p limit 10
 match (n:Person) -[:HAS_PHONE] ->(p:Phone) where n.name="姓名6" return n,p limit 10
 ```
 
-## 多维度查询与创建
+## 多维度查询
 
 * 几度关系查询
 
@@ -70,6 +70,8 @@ match (n:USER) where n.name= contains 'Jack' return n limit 10
 ##指定包含的字符串
 ```
 
+## 创建实体关系
+
 * 创建节点与关系
 
 ```
@@ -84,7 +86,31 @@ create (n:Person{name:"李四"}) -[:FEAR{level:1}] ->(t:Tiger{type:"东北虎"})
 ##创建的关系和实体
 ```
 
-## 创建实体关系
+* 给两个没有关系的实体创建关系
+
+```
+create (n:Person{name:"张三"})
+create (n:Person{name:"李四"})
+
+match (n:Person{name:"张三"}),(m:Person{name:"李四"}) return n,m  ##先进行查询验证
+
+
+match (n:Person{name:"张三"}),(m:Person{name:"李四"}) create n-[k:KNOW]->[m] return k 
+
+
+
+```
+
+* merge 有则返回，没有则进行创建
+
+```
+match (n:Person{name:"张三"}),(m:Person{name:"李四"}) merge n-[L:love]->[m] return k 
+
+```
+
+## 删除实体关系
+
+
 
 
 
