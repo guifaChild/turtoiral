@@ -41,7 +41,7 @@ match (n:Person) -[:HAS_PHONE] ->(p:Phone) return n,p limit 10
 match (n:Person) -[:HAS_PHONE] ->(p:Phone) where n.name="姓名6" return n,p limit 10
 ```
 
-## 多维度查询
+## 多维度查询与创建
 
 * 几度关系查询
 
@@ -70,7 +70,12 @@ match (n:USER) where n.name= contains 'Jack' return n limit 10
 ##指定包含的字符串
 ```
 
+* 创建
 
+```
+create (n:Person) -[:Loves] ->(m:Dogs)
+##创建两个节点和一个关系
+```
 
 
 
