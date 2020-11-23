@@ -70,7 +70,7 @@ match (n:USER) where n.name= contains 'Jack' return n limit 10
 ##指定包含的字符串
 ```
 
-* 创建
+* 创建节点与关系
 
 ```
 create (n:Person) -[:Loves] ->(m:Dogs)
