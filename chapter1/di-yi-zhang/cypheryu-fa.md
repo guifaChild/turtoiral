@@ -106,14 +106,56 @@ match (n:Person{name:"张三"}),(m:Person{name:"李四"}) merge n-[L:love]->[m] 
 
 ## 删除实体关系
 
-删除两个实体之间的关系
+* 删除两个实体之间的关系
 
 ```
-# 先进查询
-match (n:Person{name:"李四"})
+match (n:Person{name:"李四"})-[f:FEAR] ->(m:Tiger) delete f
+match (n:Person{name:"李四"})-[f:FEAR] ->(m:Tiger) return n ##验证查询
+```
 
+* 删除实体
 
 ```
+match (n:Person{name:"李四"}) delete n
+```
+
+删除实体之前先删除关系
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
