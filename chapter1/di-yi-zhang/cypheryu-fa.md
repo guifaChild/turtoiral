@@ -41,5 +41,26 @@ match (n:Person) -[:HAS_PHONE] ->(p:Phone) return n,p limit 10
 match (n:Person) -[:HAS_PHONE] ->(p:Phone) where n.name="姓名6" return n,p limit 10
 ```
 
+## 多维度查询
+
+* 几度关系查询
+
+```
+match (n:Person) -[:HAS_PHONE]->(p:Phone)-[:CALL]-(p1:Phone) where n.name="姓名6" return n,p,p1 limit 10
+查询的是两度关系内的数据
+```
+
+* 利用关系查询 \(不限定实体，只限定关系\)
+
+```
+match p=()-[a:CALL]-() return p limit 10
+```
+
+* 利用正则查询
+
+```
+
+```
+
 
 
