@@ -84,5 +84,9 @@ create (n:Person{name:"李四"}) -[:FEAR{level:1}] ->(t:Tiger{type:"东北虎"})
 ##创建的关系和实体
 ```
 
+## 创建实体关系
+
+
+
 
 
