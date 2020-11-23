@@ -110,6 +110,9 @@ match (n:Person{name:"张三"}),(m:Person{name:"李四"}) merge n-[L:love]->[m] 
 
 ```
 # 先进查询
+match (n:Person{name:"李四"})
+
+
 ```
 
 
