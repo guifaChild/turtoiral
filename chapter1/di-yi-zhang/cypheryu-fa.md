@@ -77,5 +77,12 @@ create (n:Person) -[:Loves] ->(m:Dogs)
 ##创建两个节点和一个关系
 ```
 
+* 创建带有属性的关系和实体
+
+```
+create (n:Person{name:"李四"}) -[:FEAR{level:1}] ->(t:Tiger{type:"东北虎"})
+##创建的关系和实体
+```
+
 
 
