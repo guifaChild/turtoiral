@@ -95,22 +95,22 @@ create (n:Person{name:"李四"})
 match (n:Person{name:"张三"}),(m:Person{name:"李四"}) return n,m  ##先进行查询验证
 
 
-match (n:Person{name:"张三"}),(m:Person{name:"李四"}) create n-[k:KNOW]->[m] return k 
-
-
-
+match (n:Person{name:"张三"}),(m:Person{name:"李四"}) create n-[k:KNOW]->[m] return k
 ```
 
 * merge 有则返回，没有则进行创建
 
 ```
-match (n:Person{name:"张三"}),(m:Person{name:"李四"}) merge n-[L:love]->[m] return k 
-
+match (n:Person{name:"张三"}),(m:Person{name:"李四"}) merge n-[L:love]->[m] return k
 ```
 
 ## 删除实体关系
 
+删除两个实体之间的关系
 
+```
+# 先进查询
+```
 
 
 
