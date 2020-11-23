@@ -88,23 +88,3 @@ create (n:Person{name:"李四"}) -[:FEAR{level:1}] ->(t:Tiger{type:"东北虎"})
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
