@@ -174,6 +174,37 @@ drop   constraint on (p:Person) assert (p.name) is unique
 
 ## Cypher的复杂查询
 
+* 查询姓名12  3度以内的实体
+
+```
+match (p:Person)-[:FRIEND_OF]-(p1:Person)-[:FRIEND_OF]-(p2:Person) where p.name="12" return p,p1,p2
+match (p:Person)-[]-(p1:Person)-[]-(p2:Person) where p.name="12" return p,p1,p2
+```
+
+* 姓名11的通话记录中有哪些
+
+```
+match (p:Person)-[:HAS_PHONE]->(p2:Phone)-[:CALL]-(h:Phone) where p.name='11' return p,p1,h
+
+```
+
+* 最短路径检索
+* 查询姓名2 到姓名10的最短路径
+
+```
+match (p1:Person{name:"姓名2"}),(p2:Person{name:"姓名10"}),p=shortestpath((p1)-[*..10]-(p2)) return p 
+#########10表示10度关系内
+
+
+返回多组结果 可能存在很多
+match (p1:Person{name:"姓名2"}),(p2:Person{name:"姓名10"}),p=allshortestpaths((p1)-[*..10]-(p2)) return p 
+#########10表示10度关系内
+```
+
+官方Cypher函数
+
+
+
 
 
 
