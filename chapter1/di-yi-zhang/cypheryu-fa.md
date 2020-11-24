@@ -170,8 +170,21 @@ drop index on :Person(name)
 ```
 create constraint on (p:Person) assert (p.name) is unique
 drop   constraint on (p:Person) assert (p.name) is unique
-
 ```
+
+## Cypher的复杂查询
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
