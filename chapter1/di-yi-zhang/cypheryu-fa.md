@@ -134,12 +134,21 @@ match (n:Person) -[l:Loves] ->(d:Dog) delete n,l,d
 ```
 match (t:tiger) where id(t) =1817 return t  ## 查询验证
 match (t:tiger) where id(t) =1817 set t:A return t  ## 加上了一个标签，一个实体可以有多个标签
-
 ```
 
 标签传播算法
 
+* 更新实体属性
 
+```
+match (t:tiger) where id(t) =1817 set t.age=10 return t  ## 查询验证
+```
+
+* 为关系增加属性
+
+```
+match(n:Person)-[l:Love]->(:Person) set l.date="1990" return n
+```
 
 
 
