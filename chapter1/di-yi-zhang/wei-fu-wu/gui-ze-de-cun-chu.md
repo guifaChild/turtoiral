@@ -44,6 +44,24 @@ match(p:Person)-[]-(p1:Person)-[]-(p:Person)-[h:HAS_PHONE]-(b:Black) where p.per
 count（b）
 ```
 
+## 规则引擎代码开发
+
+SpringBoot就是极少的配置跑去了以前spring框架的繁琐的配置项
+
+* 新建maven工程
+
+```
+
+```
+
+
+
+
+
+
+
+
+
 
 
 
