@@ -14,3 +14,36 @@
 
 1、申请人之前有多少个逾期的进件
 
+```
+match (p:Person)-[h:HAS_APPLICATION]->(a:Application) where a.status="VOER_DUE" and p.persid="24301" return 
+
+count(a)
+
+```
+
+2、申请人的一度关系中有多少个触碰黑名单
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
