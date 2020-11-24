@@ -51,6 +51,19 @@ SpringBoot就是极少的配置跑去了以前spring框架的繁琐的配置项
 * 新建maven工程
 
 ```
+Groupid：com.sft.ai.kg
+
+artifactid:rule-engineer-server
+
+
+```
+
+* 引包
+
+```
+
+
+
 
 
 
