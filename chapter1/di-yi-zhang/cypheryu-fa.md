@@ -150,23 +150,20 @@ match (t:tiger) where id(t) =1817 set t.age=10 return t  ## 查询验证
 match(n:Person)-[l:Love]->(:Person) set l.date="1990" return n
 ```
 
+# Neo4j的索引\(能够提高查询速度\)
 
+* 语法 ----创建
 
+```
+create index on :<标签名称>(属性名称)
+create index on :Person(name)
+```
 
+* 删除索引
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
+drop index on :Person(name)
+```
 
 
 
