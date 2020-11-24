@@ -18,32 +18,19 @@
 match (p:Person)-[h:HAS_APPLICATION]->(a:Application) where a.status="VOER_DUE" and p.persid="24301" return 
 
 count(a)
-
 ```
 
 2、申请人的一度关系中有多少个触碰黑名单
 
+```
+match(a:Person)-[]-(p1:Person)-[h:HAS_PHONE]-(b:Black) where p.personid="243010"
 
+### return p,p1,h,b
 
+count（b）
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+##这里的b是电话的另一个标签
+```
 
 
 
