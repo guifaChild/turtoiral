@@ -124,20 +124,20 @@ match (n:Person{name:"李四"}) delete n
 * 同时 删除关系和实体
 
 ```
+match (n:Person) -[l:Loves] ->(d:Dog) delete n,l,d
+```
+
+# 更新实体关系
+
+* 更新实体
+
+```
+match (t:tiger) where id(t) =1817 return t  ## 查询验证
+match (t:tiger) where id(t) =1817 set t:A return t  ## 加上了一个标签，一个实体可以有多个标签
 
 ```
 
-
-
-
-
-
-
-
-
-
-
-
+标签传播算法
 
 
 
