@@ -165,5 +165,13 @@ create index on :Person(name)
 drop index on :Person(name)
 ```
 
+* 创建唯一约束 与删除唯一约束
+
+```
+create constraint on (p:Person) assert (p.name) is unique
+drop   constraint on (p:Person) assert (p.name) is unique
+
+```
+
 
 
