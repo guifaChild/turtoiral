@@ -202,7 +202,7 @@ public class SwaggerConfig {
 </configuration>
 ```
 
-配置mybaits-config.xml文件
+* 配置mybaits-config.xml文件
 
 ```
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -218,8 +218,6 @@ public class SwaggerConfig {
     </mappers>
 </configuration>
 ```
-
-
 
 
 
