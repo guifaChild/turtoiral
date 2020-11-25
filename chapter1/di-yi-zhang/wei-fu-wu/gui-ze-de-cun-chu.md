@@ -249,5 +249,61 @@ neo4j:
     password: 123456
 ```
 
+* 创建配置文件Neo4jPeoperties.java
+
+```
+package com.sft.ai.config;
+
+import lombok.Data;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+
+@Data
+@ConfigurationProperties(prefix = "neo4j.datasource")
+public class Neo4jPeoperties {
+    private String uri;
+    private String username;
+    private String password;
+
+
+}
+
+```
+
+* 创建与springboot结合的neo4j的驱动
+
+```
+package com.sft.ai.config;
+
+import org.neo4j.driver.v1.AuthTokens;
+import org.neo4j.driver.v1.Config;
+import org.neo4j.driver.v1.Driver;
+import org.neo4j.driver.v1.GraphDatabase;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import java.util.concurrent.TimeUnit;
+
+@Configuration
+@EnableConfigurationProperties(Neo4jPeoperties.class)
+public class Neo4jConfig {
+    private final Neo4jPeoperties neo4jPeoperties;
+
+    public Neo4jConfig(Neo4jPeoperties neo4jPeoperties) {
+        this.neo4jPeoperties = neo4jPeoperties;
+    }
+    @Bean
+    public Driver driver(){
+        Config config=Config.build().withMaxConnectionPoolSize(50)
+                .withConnectionAcquisitionTimeout(5, TimeUnit.SECONDS).toConfig();
+        return GraphDatabase.driver(neo4jPeoperties.getUri(), AuthTokens.basic(neo4jPeoperties.getUsername(),
+                neo4jPeoperties.getPassword()));
+    }
+}
+
+```
+
+
+
 
 
