@@ -81,6 +81,11 @@ artifactid:rule-engineer-server
             <artifactId>lombok</artifactId>
             <version>1.16.16</version>
         </dependency>
+         <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>1.3.0</version>
+        </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
