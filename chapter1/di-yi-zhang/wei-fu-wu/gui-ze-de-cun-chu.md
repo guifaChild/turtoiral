@@ -307,10 +307,9 @@ public class Neo4jConfig {
 规则中的语句替换：
 $keyID代替前面的具体id
 并放入到数据库中
-
 ```
 
-* 创建controller类
+* 创建RuleController类
 
 ```
 package com.sft.ai.controller;
@@ -368,7 +367,6 @@ public class RuleController {
         return resultCount;
     }
 }
-
 ```
 
 
