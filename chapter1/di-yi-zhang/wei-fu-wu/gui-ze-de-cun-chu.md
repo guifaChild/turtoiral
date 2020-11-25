@@ -369,5 +369,7 @@ public class RuleController {
 }
 ```
 
+启动application.java
 
+访问路径：  [http://localhost:8888/swagger-ui.html](http://localhost:8888/swagger-ui.html)
 
