@@ -112,5 +112,46 @@ public class Application {
 }
 ```
 
+* 创建配置swagger 
+
+```
+package com.sft.ai.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+/**
+ * 配置文件，swagger-ui写起来更加的简单
+ */
+@Configuration
+@EnableSwagger2
+public class SwaggerConfig {
+    @Bean
+    public Docket api(){
+        return new Docket(DocumentationType.SWAGGER_2)
+                .apiInfo(apiInfo())
+                .pathMapping("/")
+                .select()
+                .paths(PathSelectors.regex("/.*"))
+                .build();
+    }
+
+    private ApiInfo apiInfo(){
+        return new ApiInfoBuilder().title("Knowledge Gragh Rule Engine Service Api")
+                .contact(new Contact("zhangguifa","","zhangguifa5@gmail.com"))
+                .description("Knowledge Gragh Rule Engine Service Api")
+                .version("1.0")
+                .build();
+    }
+}
+```
+
 
 
