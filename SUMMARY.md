@@ -9,6 +9,8 @@
     * [微服务搭建规则引擎](chapter1/di-yi-zhang/wei-fu-wu.md)
       * [微服务介绍](chapter1/di-yi-zhang/wei-fu-wu/wei-fu-wu-jie-shao.md)
       * [规则引擎](chapter1/di-yi-zhang/wei-fu-wu/gui-ze-de-cun-chu.md)
+    * [kg的实时与离线数据同步](chapter1/di-yi-zhang/kgde-shi-shi-yu-li-xian-shu-ju-tong-bu.md)
+      * [Kafka消息队列](chapter1/di-yi-zhang/kgde-shi-shi-yu-li-xian-shu-ju-tong-bu/kafkaxiao-xi-dui-lie.md)
   * [情感分析](chapter1/di-er-zhang.md)
   * [推荐系统](chapter1/wen-ben-fen-lei.md)
   * [实体识别](chapter1/shi-ti-shi-bie.md)
