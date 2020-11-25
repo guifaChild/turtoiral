@@ -41,3 +41,5 @@ Kafka集群以称为Topic的类别存储记录流。
 
 官方链接：（apache kafka）[https://kafka.apachecn.org/quickstart.html](https://kafka.apachecn.org/quickstart.html)
 
+
+
