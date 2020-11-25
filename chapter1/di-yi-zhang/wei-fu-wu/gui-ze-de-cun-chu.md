@@ -219,5 +219,35 @@ public class SwaggerConfig {
 </configuration>
 ```
 
+* 配置application.yml文件
+
+```
+server:
+  port: 8888
+logging:
+  path: logs
+  file: ruleEngine.log
+spring:
+  application:
+    name: ruleEngine
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://rm-2ze638ua1roqbuaxl8o.mysql.rds.aliyuncs.com:3306/knowledge_graph?serverTimezone=GMT
+    username: root
+    password: 123456
+  data:
+    neo4j:
+      auto-index: 
+mybatis:
+  type-aliases-package: com.sft.ai.model
+  mapper-locations:
+    - mapper/*
+neo4j:
+  datasource:
+    uri: bolt://localhost:7474
+    username: neo4j
+    password: 123456
+```
+
 
 
