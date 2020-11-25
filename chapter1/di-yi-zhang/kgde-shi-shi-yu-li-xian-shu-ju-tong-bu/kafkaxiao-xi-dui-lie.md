@@ -41,5 +41,60 @@ Kafka集群以称为Topic的类别存储记录流。
 
 官方链接：（apache kafka）[https://kafka.apachecn.org/quickstart.html](https://kafka.apachecn.org/quickstart.html)
 
+* 文件下载
 
+```
+文件下载路径：http://kafka.apache.org/downloads
+```
+
+* 文件解压
+
+```
+tar -xvf kafka_2.11-2.0.0.tgz909
+
+```
+
+* 进入文件
+
+```
+cd kafka_2.11-2.0.0
+```
+
+* 启动zookeeper 
+
+```
+bin/zookeeper-server-start.sh config/zookeeper.properties
+```
+
+* 启动Kafka本身的服务
+
+```
+bin/kafka-server-start.sh config/server.properties
+```
+
+* 创建topic
+
+```
+bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic mytest
+```
+
+* 查看topic
+
+```
+bin/kafka-topics.sh --list --zookeeper localhost:2181
+```
+
+* 启动生产者
+
+```
+bin/kafka-console-producer.sh --broker-list localhost:9092 --topic my_test
+```
+
+* 启动消费者
+
+```
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic my_test --from-beginning
+```
+
+可以正式进行测试
 
