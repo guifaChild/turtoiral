@@ -51,7 +51,6 @@ Kafka集群以称为Topic的类别存储记录流。
 
 ```
 tar -xvf kafka_2.11-2.0.0.tgz909
-
 ```
 
 * 进入文件
@@ -97,4 +96,16 @@ bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic my_test 
 ```
 
 可以正式进行测试
+
+
+
+
+
+
+
+## Kafka集群部署
+
+
+
+
 
