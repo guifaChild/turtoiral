@@ -11,7 +11,7 @@
       * [规则引擎](chapter1/di-yi-zhang/wei-fu-wu/gui-ze-de-cun-chu.md)
     * [kg的实时与离线数据同步](chapter1/di-yi-zhang/kgde-shi-shi-yu-li-xian-shu-ju-tong-bu.md)
       * [Kafka消息队列](chapter1/di-yi-zhang/kgde-shi-shi-yu-li-xian-shu-ju-tong-bu/kafkaxiao-xi-dui-lie.md)
-  * [知识图谱（carkg）](chapter1/zhi-shi-tu-pu-ff08-carkg.md)
+  * [知识图谱（carkg demo）](chapter1/zhi-shi-tu-pu-ff08-carkg.md)
     * [项目开发环境安装](chapter1/zhi-shi-tu-pu-ff08-carkg/xiang-mu-kai-fa-huan-jing-an-zhuang.md)
     * [项目业务需求说明](chapter1/zhi-shi-tu-pu-ff08-carkg/xiang-mu-kai-fa-huan-jing-an-zhuang/xiang-mu-ye-wu-xu-qiu-shuo-ming.md)
     * [项目总体架构设计](chapter1/zhi-shi-tu-pu-ff08-carkg/xiang-mu-zong-ti-jia-gou-she-ji.md)
