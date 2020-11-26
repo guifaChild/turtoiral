@@ -24,13 +24,13 @@
 
 * 品牌粘性分析
 
-
+![](/assets/kar02.png)
 
 * 用户画像
 
-
+![](/assets/kar03.png)
 
 * 用户兴趣洞察
 
-
+![](/assets/kar04.png)
 
