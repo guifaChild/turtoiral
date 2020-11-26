@@ -15,6 +15,7 @@
     * [项目开发环境安装](chapter1/zhi-shi-tu-pu-ff08-carkg/xiang-mu-kai-fa-huan-jing-an-zhuang.md)
     * [项目业务需求说明](chapter1/zhi-shi-tu-pu-ff08-carkg/xiang-mu-kai-fa-huan-jing-an-zhuang/xiang-mu-ye-wu-xu-qiu-shuo-ming.md)
     * [项目总体架构设计](chapter1/zhi-shi-tu-pu-ff08-carkg/xiang-mu-zong-ti-jia-gou-she-ji.md)
+    * [知识图谱模型设计方法论](chapter1/zhi-shi-tu-pu-ff08-carkg/zhi-shi-tu-pu-mo-xing-she-ji-fang-fa-lun.md)
   * [情感分析](chapter1/di-er-zhang.md)
   * [推荐系统](chapter1/wen-ben-fen-lei.md)
   * [实体识别](chapter1/shi-ti-shi-bie.md)
