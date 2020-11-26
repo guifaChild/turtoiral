@@ -13,6 +13,7 @@
       * [Kafka消息队列](chapter1/di-yi-zhang/kgde-shi-shi-yu-li-xian-shu-ju-tong-bu/kafkaxiao-xi-dui-lie.md)
   * [知识图谱（carkg）](chapter1/zhi-shi-tu-pu-ff08-carkg.md)
     * [项目开发环境安装](chapter1/zhi-shi-tu-pu-ff08-carkg/xiang-mu-kai-fa-huan-jing-an-zhuang.md)
+    * [项目业务需求说明](chapter1/zhi-shi-tu-pu-ff08-carkg/xiang-mu-kai-fa-huan-jing-an-zhuang/xiang-mu-ye-wu-xu-qiu-shuo-ming.md)
   * [情感分析](chapter1/di-er-zhang.md)
   * [推荐系统](chapter1/wen-ben-fen-lei.md)
   * [实体识别](chapter1/shi-ti-shi-bie.md)
