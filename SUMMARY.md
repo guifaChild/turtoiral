@@ -18,7 +18,7 @@
     * [知识图谱模型设计方法论](chapter1/zhi-shi-tu-pu-ff08-carkg/zhi-shi-tu-pu-mo-xing-she-ji-fang-fa-lun.md)
     * [知识图谱语义类型设计](chapter1/zhi-shi-tu-pu-ff08-carkg/zhi-shi-tu-pu-yu-yi-lei-xing-she-ji.md)
     * [知识图谱语义关系设计](chapter1/zhi-shi-tu-pu-ff08-carkg/yu-yi-guan-xi-she-ji.md)
-    * [开发环境数据获取（爬虫）](chapter1/zhi-shi-tu-pu-ff08-carkg/kai-fa-huan-jing-an-zhuang-bu-shu.md)
+    * [数据爬取与数据导入](chapter1/zhi-shi-tu-pu-ff08-carkg/kai-fa-huan-jing-an-zhuang-bu-shu.md)
   * [情感分析](chapter1/di-er-zhang.md)
   * [推荐系统](chapter1/wen-ben-fen-lei.md)
   * [实体识别](chapter1/shi-ti-shi-bie.md)
