@@ -20,6 +20,7 @@
     * [知识图谱语义关系设计](chapter1/zhi-shi-tu-pu-ff08-carkg/yu-yi-guan-xi-she-ji.md)
     * [数据爬取与数据导入](chapter1/zhi-shi-tu-pu-ff08-carkg/kai-fa-huan-jing-an-zhuang-bu-shu.md)
     * [web前端框架设计](chapter1/zhi-shi-tu-pu-ff08-carkg/webqian-duan-kuang-jia-she-ji.md)
+    * [命名实体识别](chapter1/zhi-shi-tu-pu-ff08-carkg/ming-ming-shi-ti-shi-bie.md)
   * [情感分析](chapter1/di-er-zhang.md)
   * [推荐系统](chapter1/wen-ben-fen-lei.md)
   * [实体识别](chapter1/shi-ti-shi-bie.md)
