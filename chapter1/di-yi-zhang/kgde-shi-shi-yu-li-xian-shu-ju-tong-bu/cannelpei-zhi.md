@@ -229,5 +229,14 @@ canal.instance.parse.parallelThreadSize = 16
 修改配置partition为0
 ```
 
+14、外网访问kafka，修改配置文件
+
+```
+vim config/Server.properties
+
+修改监听与ip
+
+```
+
 
 
