@@ -101,3 +101,51 @@ bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic my_test 
 
 [kafka集群环境部署](https://blog.csdn.net/xuesp/article/details/88094326)
 
+
+
+# Kafka 的Java API使用
+
+1、打开IDEA 新建一个Maven项目
+
+```
+groupid  : com.zhang.ai.kg
+
+artifactid: kafka-demo
+
+```
+
+2、配置引入的pom.xml文件
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.zhang.ai.kg</groupId>
+    <artifactId>kafkademo</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+    </dependencies>
+
+</project>
+```
+
+3、创建ConsumerDemo
+
+```
+
+```
+
+
+
+
+
+
+
