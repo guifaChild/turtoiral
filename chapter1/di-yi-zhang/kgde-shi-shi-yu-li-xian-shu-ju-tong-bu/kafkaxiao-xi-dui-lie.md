@@ -178,7 +178,36 @@ public class ConsumerDemo {
 
     }
 }
+```
 
+4、创建ProducerDemo.java 生产者
+
+```java
+package com.sft.ai.kafka;
+
+import java.util.Properties;
+
+public class ProducerDemo {
+    public static void main(String[] args) {
+        Properties properties=new Properties();
+        properties.put("bootstrap.servers","localhost:9092");
+        //生产者需要server接收到数据之后， 要发出一个确认接受的信号
+        //0producer不需要等待任何确认的消息
+        //1 至少要等待leader已经成功将数据写入到本地log没并不意味着所有的follower已经写入
+        //all  这意味着leader需要等待所有的备份都成功的写入到日志中
+
+        properties.put("acks","all");
+        //重试的次数
+        //比如有两条消息 ： 1 和 2  1先来，但是1发送失败了，重试次数为1， 2会接着就发送数据，然后2再发送一次
+        //改变了我们消息发送的顺序
+
+        properties.put("retries",0);
+
+        properties.put("buffer.memory",33554432);
+
+        
+
+    }
 ```
 
 
