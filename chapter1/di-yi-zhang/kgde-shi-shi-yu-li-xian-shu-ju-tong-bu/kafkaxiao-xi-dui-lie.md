@@ -172,6 +172,7 @@ public class ConsumerDemo {
 
         while (true){
             ConsumerRecords<String,String> records =consumer.poll(100);//阻塞的最长时间
+           //新的书写方式 ConsumerRecords<String,String> records =consumer.poll(Duration.ofSeconds(1));
 
             for(ConsumerRecord<String,String> record:records){
                 System.out.printf("offset =%d ,key= %s , value = %s",record.offset(),record.key(),record.value());
@@ -233,12 +234,9 @@ public class ProducerDemo {
 
     }
 }
-
 ```
 
 5、启动消费者
-
-
 
 6、启动生产者
 
