@@ -101,8 +101,6 @@ bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic my_test 
 
 [kafka集群环境部署](https://blog.csdn.net/xuesp/article/details/88094326)
 
-
-
 # Kafka 的Java API使用
 
 1、打开IDEA 新建一个Maven项目
@@ -111,7 +109,6 @@ bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic my_test 
 groupid  : com.zhang.ai.kg
 
 artifactid: kafka-demo
-
 ```
 
 2、配置引入的pom.xml文件
@@ -137,15 +134,52 @@ artifactid: kafka-demo
 </project>
 ```
 
-3、创建ConsumerDemo
+3、创建ConsumerDemo.java 消费者
+
+```java
+package com.sft.ai.kafka;
+
+import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.apache.kafka.clients.consumer.ConsumerRecords;
+import org.apache.kafka.clients.consumer.KafkaConsumer;
+
+import java.util.Arrays;
+import java.util.Properties;
+
+public class ConsumerDemo {
+    public static void main(String[] args) {
+//        配置文件内容直接写在代码中
+        Properties properties =new Properties();
+        //可以写如多个的kafka集群
+        properties.put("bootstrap.servers","localhost:9092");
+        //用来表示consumer进程所在组的一个字符串，如果设置同样的groupid，表示这些进程属于同一个consumer group
+        properties.put("group.id","test");
+        //如果设置为真，consumer所接受到的消息的offset将会自动同步到zookeeper里面
+        properties.put("enable.auto.commit","true");
+        //consumer向zookeeper提交offset的频率 单位是秒
+        properties.put("auto.commit.interval","1000");
+        //序列化的配置
+        properties.put("key.deserializer","org.apache.kafka.common.serialization.StringDeserializer");
+        //序列化的配置
+        properties.put("value.deserializer","org.apache.kafka.common.serialization.StringDeserializer");
+
+
+        KafkaConsumer <String,String> consumer= new KafkaConsumer<String,String> (properties);
+
+        consumer.subscribe(Arrays.asList("my_test"));//这里面就是要消费的topic
+
+        while (true){
+            ConsumerRecords<String,String> records =consumer.poll(100);//阻塞的最长时间
+
+            for(ConsumerRecord<String,String> record:records){
+                System.out.printf("offset =%d ,key= %s , value = %s",record.offset(),record.key(),record.value());
+            }
+        }
+
+    }
+}
 
 ```
-
-```
-
-
-
-
 
 
 
