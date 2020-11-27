@@ -12,8 +12,6 @@ mysql数据库都会往binlog中插入数据，记录一条数据，通过模仿
 
 ```
 添加内容到my.cnf中
-
-
 ```
 
 1、查看mysql服务
@@ -26,7 +24,6 @@ ps -ef | grep mysql
 
 ```
 find / -name my.cnf
-
 ```
 
 3、修改文件，vim my.cnf
@@ -47,8 +44,6 @@ service mysql restart
 mariadb是mysql的一个分支。不要使用truncate数据，不会将操作记录在binlog中
 
 delete不会破坏自增id结构。
-
-
 
 5、用户授权
 
@@ -113,7 +108,7 @@ sh bin/startup.sh
 
 11、创建ClientSample代码
 
-```
+```java
 package com.sft.ai.kafka;
 import java.net.InetSocketAddress;
 import java.util.List;
