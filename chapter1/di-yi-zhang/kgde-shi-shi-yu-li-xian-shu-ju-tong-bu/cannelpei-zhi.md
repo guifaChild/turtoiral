@@ -223,7 +223,11 @@ vim conf/canal.properties
 canal.instance.parse.parallelThreadSize = 16
 ```
 
-
-
 13、[canal与kafka进行整合。](https://github.com/alibaba/canal/wiki/Canal-Kafka-RocketMQ-QuickStart)
+
+```
+修改配置partition为0
+```
+
+
 
