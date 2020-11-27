@@ -97,15 +97,7 @@ bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic my_test 
 
 可以正式进行测试
 
-
-
-
-
-
-
 ## Kafka集群部署
 
-
-
-
+[kafka集群环境部署](https://blog.csdn.net/xuesp/article/details/88094326)
 
