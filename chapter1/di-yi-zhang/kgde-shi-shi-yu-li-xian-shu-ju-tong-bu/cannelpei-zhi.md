@@ -235,8 +235,32 @@ canal.instance.parse.parallelThreadSize = 16
 vim config/Server.properties
 
 修改监听与ip
+```
+
+## 历史数据同步
+
+`show binary logs;`
+
+`show binlog events in '*****.log'`
+
+修改canal
+
+conf/meta.dat
+
+vim conf/meta.dat
 
 ```
+修改journalName文件
+和position的位置
+```
+
+
+
+
+
+
+
+
 
 
 
