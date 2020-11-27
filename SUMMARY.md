@@ -12,6 +12,7 @@
     * [kg的实时与离线数据同步](chapter1/di-yi-zhang/kgde-shi-shi-yu-li-xian-shu-ju-tong-bu.md)
       * [Kafka消息队列](chapter1/di-yi-zhang/kgde-shi-shi-yu-li-xian-shu-ju-tong-bu/kafkaxiao-xi-dui-lie.md)
       * [Canal的使用](chapter1/di-yi-zhang/kgde-shi-shi-yu-li-xian-shu-ju-tong-bu/cannelpei-zhi.md)
+      * [数据同步引擎](chapter1/di-yi-zhang/kgde-shi-shi-yu-li-xian-shu-ju-tong-bu/shu-ju-tong-bu-yin-qing.md)
   * [知识图谱（carkg demo）](chapter1/zhi-shi-tu-pu-ff08-carkg.md)
     * [项目开发环境安装](chapter1/zhi-shi-tu-pu-ff08-carkg/xiang-mu-kai-fa-huan-jing-an-zhuang.md)
     * [项目业务需求说明](chapter1/zhi-shi-tu-pu-ff08-carkg/xiang-mu-kai-fa-huan-jing-an-zhuang/xiang-mu-ye-wu-xu-qiu-shuo-ming.md)
