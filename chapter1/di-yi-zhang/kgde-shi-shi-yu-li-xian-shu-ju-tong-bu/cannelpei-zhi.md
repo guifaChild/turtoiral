@@ -211,5 +211,17 @@ public class SimpleCanalClientExample {
 }
 ```
 
+12、修改链接配置代码、修改canal配置文件
+
+```
+vim conf/canal.properties
+
+
+
+打开连接池
+
+canal.instance.parse.parallelThreadSize = 16
+```
+
 
 
