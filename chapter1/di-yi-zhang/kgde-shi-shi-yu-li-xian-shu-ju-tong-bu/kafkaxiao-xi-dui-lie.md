@@ -187,6 +187,10 @@ public class ConsumerDemo {
 ```java
 package com.sft.ai.kafka;
 
+import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.Producer;
+import org.apache.kafka.clients.producer.ProducerRecord;
+
 import java.util.Properties;
 
 public class ProducerDemo {
@@ -202,14 +206,34 @@ public class ProducerDemo {
         //重试的次数
         //比如有两条消息 ： 1 和 2  1先来，但是1发送失败了，重试次数为1， 2会接着就发送数据，然后2再发送一次
         //改变了我们消息发送的顺序
-
         properties.put("retries",0);
 
         properties.put("buffer.memory",33554432);
+        //producer试图批处理消息记录，目的是减少请求次数，
+        // 改善客户端和服务端的性能
+        //是控制批处理消息的字节数
+        //如果这个数小，是不是就降低了吞吐量，如果设置为0，那么就是禁用批处理
+        //如果这个数设置的很大，是不是就会浪费很多的内存空间。
 
+        properties.put("batch.size",16384);
+
+        properties.put("linger.ms",1);//延时
+        properties.put("key.serializer","org.apache.kafka.common.serialization.StringDeserializer");
+        //序列化的配置
+        properties.put("value.serializer","org.apache.kafka.common.serialization.StringDeserializer");
+
+        Producer<String,String> producer =new KafkaProducer<String, String>(properties);
+
+        for (int i=0;i<100 ;i++){
+            producer.send(new ProducerRecord<String, String>("mytest",Integer.toString(i+1),Integer.toString(i)));
+            
+        }
+        producer.close();
 
 
     }
+}
+
 ```
 
 
