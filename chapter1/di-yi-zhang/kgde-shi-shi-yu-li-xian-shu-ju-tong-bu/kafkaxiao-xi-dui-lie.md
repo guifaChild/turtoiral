@@ -12,6 +12,8 @@ Kafka是一个分布式的流媒体平台，在Kafka中，客户端和服务器�
 
 记录发生时处理流
 
+## [kafka的作用](https://www.jianshu.com/p/1ae35123329e)
+
 ## Kafka的几个概念
 
 Kafka作为一个集群运行在一个或斗个可夸多个数据中心的服务器上。
@@ -205,7 +207,7 @@ public class ProducerDemo {
 
         properties.put("buffer.memory",33554432);
 
-        
+
 
     }
 ```
