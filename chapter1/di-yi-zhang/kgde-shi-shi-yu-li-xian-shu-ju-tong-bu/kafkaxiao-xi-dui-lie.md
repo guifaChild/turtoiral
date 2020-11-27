@@ -218,15 +218,15 @@ public class ProducerDemo {
         properties.put("batch.size",16384);
 
         properties.put("linger.ms",1);//延时
-        properties.put("key.serializer","org.apache.kafka.common.serialization.StringDeserializer");
+        properties.put("key.serializer","org.apache.kafka.common.serialization.StringSerializer");
         //序列化的配置
-        properties.put("value.serializer","org.apache.kafka.common.serialization.StringDeserializer");
+        properties.put("value.serializer","org.apache.kafka.common.serialization.StringSerializer");
 
         Producer<String,String> producer =new KafkaProducer<String, String>(properties);
 
         for (int i=0;i<100 ;i++){
             producer.send(new ProducerRecord<String, String>("mytest",Integer.toString(i+1),Integer.toString(i)));
-            
+
         }
         producer.close();
 
@@ -236,5 +236,9 @@ public class ProducerDemo {
 
 ```
 
+5、启动消费者
 
+
+
+6、启动生产者
 
