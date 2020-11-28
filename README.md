@@ -1,3 +1,6 @@
-# My Awesome Book
+# 人工只能学习之路
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+---
+
+本书主要讲述一些简单的例子，代码在github中可见，如有问题，请及时联系zhangguifa5@gmail.com
+
