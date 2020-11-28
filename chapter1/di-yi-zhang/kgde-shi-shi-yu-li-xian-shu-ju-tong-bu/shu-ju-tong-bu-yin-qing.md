@@ -6,7 +6,7 @@
 
 2、配置pom文件
 
-```
+```js
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -66,7 +66,7 @@
 
 2、配置application.yml文件
 
-```
+```js
 neo4jDatasource:
   uri: bolt://192.168.1.49:7687
   username: neo4j
@@ -82,12 +82,11 @@ kafkaConsumer:
 
 topic: example
 kafkaPartitions: 1
-
 ```
 
 3、配置解析文件类YamlParser
 
-```
+```java
 package com.sft.ai.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -117,12 +116,11 @@ public class YamlParser implements Serializable {
 
     }
 }
-
 ```
 
 4、配置文件的配置类YamlConfig.java
 
-```
+```java
 package com.sft.ai.config;
 
 import lombok.Data;
@@ -153,12 +151,11 @@ public class YamlConfig {
     }
 
 }
-
 ```
 
 5、编写消费者代码多线程进行消费  ReceiveThread.java
 
-```
+```java
 package com.sft.ai.controller;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -207,12 +204,11 @@ public class ReceiveThread implements Runnable{
 
     }
 }
-
 ```
 
 6、编写程序入口类application类，进行启动
 
-```
+```java
 package com.sft.ai;
 
 import com.fasterxml.jackson.dataformat.yaml.YAMLParser;
@@ -243,7 +239,6 @@ public class Application {
         }
     }
 }
-
 ```
 
 7、启动服务
