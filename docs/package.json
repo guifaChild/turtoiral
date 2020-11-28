@@ -1,0 +1,4 @@
+{"scripts":{
+    "build": "gitbook build ../test002 ./docs"
+}
+}
