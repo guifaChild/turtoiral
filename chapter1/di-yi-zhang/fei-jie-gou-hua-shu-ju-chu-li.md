@@ -20,17 +20,17 @@
 
 * 词干提取 （Stemming ）
 
-* 词的过滤 \(Filtering Words\)
+* 词的过滤 （Filtering Words）
 
-* 文本的表示 \(Text Representation\)
+* 文本的表示 （Text Representation）
 
-* 文本的相似度 \(Text Similarity\)
+* 文本的相似度 （Text Similarity）
 
-* 词向量 \(Word2Vec\)
+* 词向量 （Word2Vec）
 
-* 句子向量\(Sentence2Vec\)
+* 句子向量（Sentence2Vec）
 
-* 实体命名识别 \(Name Entity Recognition\)
+* 实体命名识别 （Name Entity Recognition）
 
 ## 拼写纠错
 
