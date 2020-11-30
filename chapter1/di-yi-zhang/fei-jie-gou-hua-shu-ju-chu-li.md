@@ -110,6 +110,18 @@ def generate_edit_dist(str):
 
 
 
+## 分词（word segementation）
+
+---
+
+### 流程： 语句 --》候选分割--》选择最好的
+
+
+
+
+
+
+
 
 
 
