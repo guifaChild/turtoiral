@@ -102,5 +102,11 @@ def generate_edit_dist(str):
     return [e2 for e1 in generate_edit_dist(str) for e2 in generate_edit_dist(e1)]
 ```
 
+## 如何找出编辑距离最小的
+
+
+
+用户的输入  -》   生成编辑距离为1、2的所有可能的字符串     -》   通过词典过滤     -》    排序
+
 
 
