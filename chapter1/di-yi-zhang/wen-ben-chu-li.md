@@ -68,5 +68,9 @@
 
 ---
 
-1、样本样例
+1、样本样例   sentence：word、pos、Tag
+
+2、
+
+
 
