@@ -14,7 +14,7 @@
       * [Canal的使用](chapter1/di-yi-zhang/kgde-shi-shi-yu-li-xian-shu-ju-tong-bu/cannelpei-zhi.md)
       * [数据同步引擎](chapter1/di-yi-zhang/kgde-shi-shi-yu-li-xian-shu-ju-tong-bu/shu-ju-tong-bu-yin-qing.md)
     * [非结构化数据处理](chapter1/di-yi-zhang/fei-jie-gou-hua-shu-ju-chu-li.md)
-    * 文本处理
+    * [文本处理](chapter1/di-yi-zhang/wen-ben-chu-li.md)
   * [知识图谱（carkg demo）](chapter1/zhi-shi-tu-pu-ff08-carkg.md)
     * [项目开发环境安装](chapter1/zhi-shi-tu-pu-ff08-carkg/xiang-mu-kai-fa-huan-jing-an-zhuang.md)
     * [项目业务需求说明](chapter1/zhi-shi-tu-pu-ff08-carkg/xiang-mu-kai-fa-huan-jing-an-zhuang/xiang-mu-ye-wu-xu-qiu-shuo-ming.md)
