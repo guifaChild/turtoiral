@@ -95,13 +95,15 @@ def generate_edit_dist(str):
     return set(inserts+deletes+repalces)
 ```
 
+```py
+#生成编辑距离为2的词
+
+def generate_edit_dist(str):
+    return [e2 for e1 in generate_edit_dist(str) for e2 in generate_edit_dist(e1)]
 
 
 
-
-
-
-
+```
 
 
 
