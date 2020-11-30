@@ -38,6 +38,8 @@
 
 拼写纠错
 
+* 计算编辑距离
+
 找出编辑距离最近的单词（从一个单词变到另一个单词需要的最少操作数）  算法实现  思考实现方式  （采用DP的方式实现）
 
 ```py
@@ -60,23 +62,38 @@ def edit_dist(str1,str2):
             else :
                 dp[i][j] = 1+min(dp[i-1][j],dp[i][j-1],dp[i-1][j-1])
     return dp[m][n]
-
-
-
-
 ```
 
+生成指定编辑距离的单词
 
+* 生成编辑距离的词
 
+```py
+def generate_edit_dist(str):
+    """
+    生成编辑距离为1的所有字符串列表
+    str：输入字符串
+    :param str:
+    :return:
+    """
+    #     insert，delete，repalce
+    # apple insert 操作、bapple，abpple、，“abcd。。。。”：26个
+    # delete：pple abple，appe
+    # repalce ：baple abple apble，。。。
+    # L ""  R:apple insert:L+b+R ->bapple delete :L+R[1:]->pple repalce:bpple
+    # L:a  R pple   insert:L+b+R ->abpple,delete:aple repalce:abple
+    # L:ap Rple     insert:
+    letters="abcdefghijklmnopqrstuvwxyz"
+    splits =[(str[:i],str[i:])for i in range(len(str)+1)]
+    # print(splits)
+    inserts=[L+c+R for L,R in splits for c in letters]
 
+    deletes = [L + R[1:] for L, R in splits if R]
 
-
-
-
-
-
-
-
+    repalces = [L + c + R[1:] for L, R in splits if R for c in letters]
+    # print(inserts)
+    return set(inserts+deletes+repalces)
+```
 
 
 
