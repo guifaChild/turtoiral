@@ -16,9 +16,9 @@
 
 * 拼写纠错（Spell Correction） \(文本分析系统需要，如百度、谷歌等现在的电商系统也有\)
 
-* 分词 （Word Segementation）
+* 分词 （Word Segementation ）
 
-* 词干提取 （Stemming）
+* 词干提取 （Stemming ）
 
 * 词的过滤 \(Filtering Words\)
 
@@ -37,6 +37,4 @@
 ---
 
 拼写纠错
-
-
 
