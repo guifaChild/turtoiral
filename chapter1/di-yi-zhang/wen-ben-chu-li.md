@@ -68,9 +68,67 @@
 
 ---
 
-1、样本样例   sentence：word、pos、Tag
+1、样本样例   sentence：word、pos（词性）、Tag（type）
 
-2、
+2、code 基于统计的方法
+
+```py
+"""
+Majoroity Voting
+1、统计一个单词最有可能被分成的实体类别
+2、给定一个新的单词的时候，把它分类成这个类别
+London：B-geo London ：B-geo London：O London：O   London： B-geo
+未来，如果在见到London这个单词，这个时候把他分类为B-geo
+
+"""
+import  pandas as pd
+import numpy as np
+
+data=pd.read_csv("sample.csv",encoding='utf-8')
+# 对Na做一个简单的处理,向后填充
+data.fillna(method="ffill")
+data.tail(10)
+words =list(set(data['Word'].values))
+n_words=len(words)
+
+from sklearn.base import BaseEstimator,TransformerMixin
+class MajorityVotingTagger(BaseEstimator,TransformerMixin):
+    def fit(self,X,y):
+        """
+        X:list of words
+        y:list of tags(实体类别)
+
+        """
+        word2cnt={}
+        self.tag=[]
+        for x,t in zip(X,y):
+            if t not in self.tags:
+                self.tag.append(t)
+            if x in word2cnt:
+                if t in word2cnt[x]:
+                    word2cnt[x][t] +=1
+                else:
+                    word2cnt[x][t]=1
+            else:
+                word2cnt[x]={t:1}
+        self.mjvot={}
+        for k,d in word2cnt.items():
+            self.mjvot[k]=max(d,key=d.get)
+
+
+    def predict(self,X,y):
+        return [self.mjvot.get(x,'O') for x in X]
+
+#
+words = data["word"].values.tolist()
+tags=data["Tag"].values.tolist()
+
+from sklearn.model_selection import cross_val_predict
+from sklearn.metrics import classification_report
+pred=cross_val_predict(estimator=MajorityVotingTagger(),X=words,y=tags,c=5)
+report =classification_report(y_pred=pred,y_true=tags)
+print(report)
+```
 
 
 
