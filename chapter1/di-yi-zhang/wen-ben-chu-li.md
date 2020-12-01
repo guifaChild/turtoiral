@@ -128,7 +128,54 @@ from sklearn.metrics import classification_report
 pred=cross_val_predict(estimator=MajorityVotingTagger(),X=words,y=tags,c=5)
 report =classification_report(y_pred=pred,y_true=tags)
 print(report)
+
 ```
+
+## 命名实体识别---方法2
+
+---
+
+基于随机森林的方法构建分类器
+
+code
+
+```py
+import  pandas as pd
+import numpy as np
+
+data=pd.read_csv("sample.csv",encoding='utf-8')
+# 对Na做一个简单的处理,向后填充
+data.fillna(method="ffill")
+data.tail(10)
+words =list(set(data['Word'].values))
+n_words=len(words)
+def get_feature(word):
+    return np.array([word.istitle(),word.islower(),word.isupper(),len(word),word.isdigit()
+                     ,word.isalpha()])
+
+words=[get_feature(w) for w in data["word"].values.tolist()]
+tags =data["Tag"].values.tolist()
+from sklearn.model_selection import cross_val_predict
+from sklearn.metrics import classification_report
+from sklearn.ensemble import RandomForestClassifier
+pre=cross_val_predict(RandomForestClassifier(n_estimators=20),X=words,y=tags,cv=5)
+report =classification_report(y_pred=pred,y_true=tags)
+print(report)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
