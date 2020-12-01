@@ -227,8 +227,6 @@ print(report)
 
 ---
 
-
-
 ```py
 def word2feature (sent,i):
     """
@@ -296,14 +294,6 @@ pre=cross_val_predict(estimator=crf,X=X,y=y,cv=5)
 report =flat_classification_report(y_pred=pred,y_true=y)
 print(report)
 ```
-
-
-
-
-
-
-
-
 
 
 
