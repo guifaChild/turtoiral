@@ -22,14 +22,9 @@ freebase
     Freebase
     Founder：(Bill Gates,Microsoft)                                                           
 
-```
 
-                                                                       
-```
 
-```
 
-```
 
 负样本：
 
