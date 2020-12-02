@@ -19,11 +19,9 @@ corpus text
 Bill Gates founded Microsoft in 1975
 ```
 
+                                                                            Training data
 
-
-                                                                                                  Training data
-
-                                                                                                 `  (Bill Gates ,Microsoft)  Label:Founder Feature:X founded Y`
+                                                                            (Bill Gates ,Microsoft)  Label:Founder Feature:X founded Y`
 
 ```
 Freebase
