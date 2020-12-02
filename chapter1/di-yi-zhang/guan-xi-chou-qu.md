@@ -14,18 +14,21 @@ freebase
 
 正样本：
 
-```
-corpus text
-Bill Gates founded Microsoft in 1975
+    corpus text
+    Bill Gates founded Microsoft in 1975            
+                                                               Training data
+                                                               (Bill Gates ,Microsoft) Label:Founder Feature:X founded Y`
+
+    Freebase
+    Founder：(Bill Gates,Microsoft)                                                           
+
 ```
 
-                                                                            Training data
-
-                                                                            (Bill Gates ,Microsoft)  Label:Founder Feature:X founded Y`
+                                                                       
+```
 
 ```
-Freebase
-Founder：(Bill Gates,Microsoft)
+
 ```
 
 负样本：
