@@ -12,5 +12,27 @@
 freebase
 ```
 
+正样本：
+
+corpus text
+
+`Bill Gates founded Microsoft in 1975`
+
+                                                                                                  Training data
+
+                                                                                                 `  (Bill Gates ,Microsoft)  Label:Founder Feature:X founded Y`
+
+Freebase
+
+`Founder：(Bill Gates,Microsoft)`
+
+
+
+负样本：
+
+对数据进行采用
+
+
+
 
 
