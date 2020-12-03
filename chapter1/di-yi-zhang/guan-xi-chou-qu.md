@@ -143,13 +143,31 @@ $$s=<L_2,T_1',M_2,T_2',R_2>$$
 
 这样可以计算出模板的精确率、召回率
 
-
-
 ## step4：记录评估
 
 越可靠的记录是由可靠的pattern来生成的
 
 利用confiedence来计算
+
+
+
+# HanLP介绍：
+
+github中有java和python版本
+
+java 版本：[https://github.com/hankcs/HanLP](https://github.com/hankcs/HanLP)
+
+python版本：[https://github.com/hankcs/pyhanlp](https://github.com/hankcs/pyhanlp)
+
+
+
+环境准备 pip install hanlp
+
+模板方法太简单
+
+
+
+
 
 
 
