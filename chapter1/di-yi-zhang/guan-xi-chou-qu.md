@@ -26,8 +26,6 @@ freebase
 
 对数据进行采样
 
-
-
 # 关系抽取
 
 ---
@@ -44,9 +42,21 @@ freebase
 * 基于规则
 * 监督学习
 * 半监督 & 无监督学习
-* > Bootstrap
-  >  Distant Supervision
+* > Bootstrap  
+  >  Distant Supervision  
   > 无监督学习
+
+# 基于自定义模板的方法
+
+---
+
+优点就是简单
+
+缺点就是针对没中关系都要自定义模板
+
+* 不容易写出来，不容易维护
+* 数千万级的模板
+* 可扩展性弱
 
 
 
