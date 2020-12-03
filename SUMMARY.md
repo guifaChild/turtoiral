@@ -16,6 +16,7 @@
     * [非结构化数据处理](chapter1/di-yi-zhang/fei-jie-gou-hua-shu-ju-chu-li.md)
     * [命名实体识别](chapter1/di-yi-zhang/wen-ben-chu-li.md)
     * [关系抽取技术](chapter1/di-yi-zhang/guan-xi-chou-qu.md)
+    * [实体消歧、实体统一与指代消解](chapter1/di-yi-zhang/shi-ti-xiao-qi-3001-shi-ti-tong-yi-yu-zhi-dai-xiao-jie.md)
   * [知识图谱（carkg demo）](chapter1/zhi-shi-tu-pu-ff08-carkg.md)
     * [项目开发环境安装](chapter1/zhi-shi-tu-pu-ff08-carkg/xiang-mu-kai-fa-huan-jing-an-zhuang.md)
     * [项目业务需求说明](chapter1/zhi-shi-tu-pu-ff08-carkg/xiang-mu-kai-fa-huan-jing-an-zhuang/xiang-mu-ye-wu-xu-qiu-shuo-ming.md)
