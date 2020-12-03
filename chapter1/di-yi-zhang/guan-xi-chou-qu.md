@@ -22,11 +22,31 @@ freebase
     Freebase
     Founder：(Bill Gates,Microsoft)                                                           
 
-
-
-
-
 负样本：
 
-对数据进行采用
+对数据进行采样
+
+
+
+# 关系抽取
+
+---
+
+### 关系抽取的几个常见方法
+
+* 基于自定义模板
+* Bootstrap方法
+* 监督学习方法
+* 无监督学习方法
+
+## 也可以分为：
+
+* 基于规则
+* 监督学习
+* 半监督 & 无监督学习
+* > Bootstrap
+  >  Distant Supervision
+  > 无监督学习
+
+
 
