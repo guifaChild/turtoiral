@@ -64,9 +64,45 @@ MySpec
 
 正常输出hello word
 
+配置文件新增
 
+```
+  <dependency>
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-sql_2.11</artifactId>
+      <version>2.4.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.thoughtworks.paranamer</groupId>
+      <artifactId>paranamer</artifactId>
+      <version>2.8</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-graphx_2.11</artifactId>
+      <version>2.4.0</version>
+    </dependency>
+    <dependency>
+      <groupId>neo4j-contrib</groupId>
+      <artifactId>neo4j-spark-connector</artifactId>
+      <version>2.1.0-M4</version>
+    </dependency>
+```
 
+源中配置
 
+```
+    <repository>
+      <id>SparkPackagesRepo</id>
+      <url>http://dl.bintray.com/spark-packages/maven</url>
+    </repository>
+```
+
+创建RddTest class文件
+
+```
+
+```
 
 
 
