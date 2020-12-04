@@ -171,8 +171,6 @@ class RddTest {
 }
 ```
 
-
-
 # 自定义图
 
 ---
@@ -180,7 +178,6 @@ class RddTest {
 创建PropertiesGraph的object文件
 
 ```
-
 package com.sft.ai.kg
 
 import org.apache.spark.graphx.{Edge, Graph, VertexId}
@@ -258,16 +255,149 @@ object PropertiesGraph {
 
   }
 }
+```
+
+# spark 链接neo4j
+
+---
+
+查看neo4j的conf目录下的neo4j.conf配置中的ip与端口号
+
+dbms.connector.bolt.listen\_address = 0.0.0.0:7687
+
+重启数据库
+
+新建文件SparkGraphConnector的object文件
+
+```
+package com.sft.ai.kg
+
+import org.apache.spark.SparkConf
+import org.apache.spark.api.java.JavaSparkContext
+import org.apache.spark.graphx.Graph
+import org.neo4j.driver.internal.InternalNode
+import org.neo4j.spark.Neo4j
+
+object SparkGraphxConnector {
+  def main(args: Array[String]): Unit = {
+    val conf = new SparkConf()
+      .setAppName("neo4j")
+      .setMaster("local[*]")
+      .set("spark.neo4j.bolt.url","bolt://192.168.1.49")
+      .set("spark.neo4j.bolt.user","neo4j")
+      .set("spark.neo4j.bolt.password","123456")
+
+    val sc = new JavaSparkContext(conf)
+    sc.setLogLevel("OFF")
+
+    val neo4j = Neo4j(sc)
+
+    val rdd = neo4j.cypher("match (n:Person) return n ").loadRowRdd
+
+    val personRDD = rdd.map(row=>{
+      val map =row.get(0).asInstanceOf[InternalNode]
+      new Person(map.get("home").asString(),
+        map.get("name").asString(),
+        map.get("personId").asString()
+      )
+    })
+    personRDD.foreach(println)
+
+    val graphQuery= "match (p:Person) = [r] - (a:Person) return id(p) as source,id(a) as target, type(r) as value"
+    val graph:Graph[String,String] = neo4j.rels(graphQuery).loadGraph
+    graph.edges.foreach(println(_))
+
+  }
+  case class Person(
+                   val home:String,
+                   val name:String,
+                   val personId:String
+                   )
+}
 
 ```
 
 
 
+需要把整个工程打包成为jar放到大数据的环境中运行
 
 
-# spark 链接neo4j
 
----
+修改配置文件
+
+```
+<build>
+    <plugins>
+      <plugin>
+        <groupId>org.scala-tools</groupId>
+        <artifactId>maven-scala-plugin</artifactId>
+        <version>2.15.2</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+              <goal>testCompile</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>1.4</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+
+          </execution>
+        </executions>
+        <configuration>
+          <fileters>
+            <filter>
+              <artifact>*:*</artifact>
+              <excludes>
+                <exclude>META-INF/*.SF</exclude>
+                <exclude>META-INF/*.DAS</exclude>
+                <exclude>META-INF/*.RSA</exclude>
+              </excludes>
+            </filter>
+          </fileters>
+          <transformers>
+            <transformer
+                        implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+              <resource>META-INF/spring.handlers</resource>
+            </transformer>
+            <transformer
+                    implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+              <mainClass>META-INF/spring.handlers</mainClass>
+            </transformer>
+            <transformer
+                    implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+              <resource>META-INF/spring.schemas</resource>
+            </transformer>
+          </transformers>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
+  
+```
+
+maven中install打成jar包
+
+寻找target下的目录jar拷贝到大数据环境
+
+spark-submit  --master spark://spark-master:7077 --class com.sft.ai.kg.SparkGraphxConnector /workspace/scala-jar/spark-graphx-engine-1.0.SNAPSHOT.jar
+
+
+
+
+
+
 
 
 
