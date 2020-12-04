@@ -101,6 +101,74 @@ MySpec
 创建RddTest class文件
 
 ```
+package com.sft.ai.kg
+
+import org.apache.spark.{SparkConf, SparkContext}
+import org.junit.{Before, Test}
+
+class RddTest {
+   var sc:SparkContext = _
+  @Before
+  def initialize():Unit ={
+    val conf = new SparkConf()
+      .setAppName("First Application")
+      .setMaster("local[*]")//本地多线程，指向所有可用的内核
+    sc=new SparkContext(conf)
+    sc.setLogLevel("OFF")//关闭日志
+
+  }
+  @Test
+  def test():Unit = {
+    val logFile ="C:/SUService.log"
+    val logDate = sc.textFile(logFile).cache()
+    val numAs= logDate.filter(line=> line.contains("a")).count()
+    val numBs= logDate.filter(line=> line.contains("b")).count()
+    println("包含a的行有%s,包含b的行有%s",numAs,numBs)
+
+  }
+  @Test
+  def test2:Unit={
+    val data= Array(1,2,3,4,5)
+    val listData=sc.parallelize(data)
+    println(listData.count())
+
+  }
+  @Test
+  def testMapRdd() = {
+    val input = sc.parallelize(List(1,2,3,4,5))
+    val result = input.map(x=>x * x)
+    println(result.collect.mkString(","))
+  }
+
+  @Test
+  def testFlatMap():Unit ={
+    val lines =sc.parallelize(List("hello world","hi","you"))
+    val words =lines.flatMap(line=>line.split(" "))
+    words.collect().foreach(println)
+  }
+
+  @Test
+  def testFackeCollection():Unit={
+    val rdd1=sc.parallelize(List("coffee","coffee","pandas"))
+    val rdd2= sc.parallelize(List("coffee","coffee","listslk"))
+    //去重
+    println(rdd1.distinct().collect().mkString(","))
+    //  取合集
+    println(rdd1.union(rdd2).collect().mkString(","))
+    //取交集
+    println(rdd1.intersection(rdd2).collect().mkString(","))
+
+    //取差集
+    println(rdd1.subtract(rdd2).collect().mkString(","))
+
+    //取笛卡尔积
+
+    println(rdd1.cartesian(rdd2).collect().mkString(","))
+  }
+
+
+
+}
 
 ```
 
