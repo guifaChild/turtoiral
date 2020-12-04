@@ -41,7 +41,6 @@ val wordCounts=textFile.flatMap(line=>line.split(" ")).map(word=>(word,1)).reduc
 
 ```
 勾选 Create from archetype
-
 ```
 
 修改配置项：
@@ -62,6 +61,14 @@ Application修改为App
 AppTest
 MySpec
 ```
+
+正常输出hello word
+
+
+
+
+
+
 
 
 
