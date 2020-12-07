@@ -1,8 +1,8 @@
 # Summary
 
 * [介绍](README.md)
-* 推荐系统
 * [机器学习](ji-qi-xue-xi.md)
+* [推荐系统](tui-jian-xi-tong.md)
 * [CV](cv.md)
 * [NLP](chapter1.md)
   * [知识图谱（基础）](chapter1/di-yi-zhang.md)
