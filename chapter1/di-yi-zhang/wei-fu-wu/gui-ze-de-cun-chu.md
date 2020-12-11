@@ -344,6 +344,8 @@ public class RuleController {
     private SqlSessionTemplate template;
     @Autowired
     private Driver driver;
+    
+    
     @ApiOperation(value = "获取规则引擎中的规制执行的结果",httpMethod = "POST")
     @RequestMapping(value = "getRuleResult",method = RequestMethod.POST)
     public int getRuleResult(@RequestParam String ruleID,@RequestParam String personID){
