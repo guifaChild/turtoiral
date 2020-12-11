@@ -88,13 +88,13 @@ bin/kafka-topics.sh --list --zookeeper localhost:2181
 * 启动生产者
 
 ```
-bin/kafka-console-producer.sh --broker-list localhost:9092 --topic my_test
+bin/kafka-console-producer.sh --broker-list localhost:9092 --topic mytest
 ```
 
 * 启动消费者
 
 ```
-bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic my_test --from-beginning
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic mytest --from-beginning
 ```
 
 可以正式进行测试
