@@ -23,6 +23,7 @@
     * [风控知识图谱设计](chapter1/di-yi-zhang/feng-kong-zhi-shi-tu-pu.md)
     * [图数据库：Spark GraphX](chapter1/di-yi-zhang/tu-shu-ju-ku-ff1a-spark-graphx.md)
     * [PageRank算法](chapter1/di-yi-zhang/pageranksuan-fa.md)
+    * [模型](chapter1/di-yi-zhang/mo-xing.md)
   * [知识图谱（carkg demo）](chapter1/zhi-shi-tu-pu-ff08-carkg.md)
     * [项目开发环境安装](chapter1/zhi-shi-tu-pu-ff08-carkg/xiang-mu-kai-fa-huan-jing-an-zhuang.md)
     * [项目业务需求说明](chapter1/zhi-shi-tu-pu-ff08-carkg/xiang-mu-kai-fa-huan-jing-an-zhuang/xiang-mu-ye-wu-xu-qiu-shuo-ming.md)
